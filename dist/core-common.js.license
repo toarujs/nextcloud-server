@@ -36,7 +36,6 @@ SPDX-FileCopyrightText: Raynos <raynos2@gmail.com>
 SPDX-FileCopyrightText: Perry Mitchell <perry@perrymitchell.net>
 SPDX-FileCopyrightText: Paul Vorbach <paul@vorba.ch> (http://paul.vorba.ch)
 SPDX-FileCopyrightText: Paul Vorbach <paul@vorb.de> (http://vorb.de)
-SPDX-FileCopyrightText: OpenJS Foundation and other contributors
 SPDX-FileCopyrightText: Olivier Scherrer <pode.fr@gmail.com>
 SPDX-FileCopyrightText: Nextcloud GmbH and Nextcloud contributors
 SPDX-FileCopyrightText: Nathan Rajlich <nathan@tootallnate.net> (http://n8.io/)
@@ -54,7 +53,6 @@ SPDX-FileCopyrightText: Jordan Harbamd <ljharb@gmail.com>
 SPDX-FileCopyrightText: Jonas Schade <derzade@gmail.com>
 SPDX-FileCopyrightText: John-David Dalton <john.david.dalton@gmail.com>
 SPDX-FileCopyrightText: John Hiesey
-SPDX-FileCopyrightText: Jeremy Ashkenas <jeremy@documentcloud.org>
 SPDX-FileCopyrightText: Jeff Sagal <sagalbot@gmail.com>
 SPDX-FileCopyrightText: James Halliday
 SPDX-FileCopyrightText: Jacob Clevenger<https://github.com/wheatjs>
@@ -488,9 +486,6 @@ This file is generated from multiple sources. Included packages:
 - is-typed-array
 	- version: 1.1.15
 	- license: MIT
-- jquery
-	- version: 3.7.1
-	- license: MIT
 - layerr
 	- version: 3.0.0
 	- license: MIT
@@ -739,9 +734,6 @@ This file is generated from multiple sources. Included packages:
 	- license: MIT
 - typescript-event-target
 	- version: 1.1.2
-	- license: MIT
-- underscore
-	- version: 1.13.7
 	- license: MIT
 - unified
 	- version: 11.0.5
