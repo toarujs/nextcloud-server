@@ -14,6 +14,10 @@ class CompositeExpression implements ICompositeExpression, \Countable {
 	public const TYPE_AND = 'AND';
 	public const TYPE_OR = 'OR';
 
+	/**
+	 * @param self::TYPE_* $type
+	 * @param array<ICompositeExpression|string> $parts
+	 */
 	public function __construct(
 		private string $type,
 		private array $parts = [],

@@ -10,11 +10,9 @@ namespace OC\DB\QueryBuilder;
 use OCP\DB\QueryBuilder\ILiteral;
 
 class Literal implements ILiteral {
-	/** @var mixed */
-	protected $literal;
-
-	public function __construct($literal) {
-		$this->literal = $literal;
+	public function __construct(
+		protected readonly mixed $literal,
+	) {
 	}
 
 	public function __toString(): string {
