@@ -43,6 +43,12 @@ class ResetPassword extends Base {
 				InputOption::VALUE_NONE,
 				'read password from environment variable NC_PASS/OC_PASS'
 			)
+			->addOption(
+				'no-password',
+				null,
+				InputOption::VALUE_NONE,
+				'Sets the password to blank'
+			)
 		;
 	}
 
@@ -61,6 +67,8 @@ class ResetPassword extends Base {
 				$output->writeln('<error>--password-from-env given, but NC_PASS/OC_PASS is empty!</error>');
 				return 1;
 			}
+		} elseif ($input->getOption('no-password')) {
+			$password = '';
 		} elseif ($input->isInteractive()) {
 			/** @var QuestionHelper $helper */
 			$helper = $this->getHelper('question');
