@@ -55,16 +55,15 @@ SPDX-FileCopyrightText: Ben Drucker
 SPDX-FileCopyrightText: Arnout Kazemier
 SPDX-FileCopyrightText: Anthony Fu <https://github.com/antfu>
 SPDX-FileCopyrightText: Amit Gupta (https://solothought.com)
-SPDX-FileCopyrightText: Amit Gupta (https://amitkumargupta.work/)
 SPDX-FileCopyrightText: @nextcloud/dialogs developers
 
 
 This file is generated from multiple sources. Included packages:
 - @floating-ui/core
-	- version: 1.7.3
+	- version: 1.7.4
 	- license: MIT
 - @floating-ui/dom
-	- version: 1.7.4
+	- version: 1.7.5
 	- license: MIT
 - @floating-ui/utils
 	- version: 0.2.10
@@ -136,7 +135,7 @@ This file is generated from multiple sources. Included packages:
 	- version: 2.2.0
 	- license: GPL-3.0-or-later
 - @nextcloud/vue
-	- version: 8.35.3
+	- version: 8.36.0
 	- license: AGPL-3.0-or-later
 - @vue/devtools-api
 	- version: 6.6.4
@@ -236,6 +235,9 @@ This file is generated from multiple sources. Included packages:
 	- license: MIT
 - events
 	- version: 3.3.0
+	- license: MIT
+- fast-xml-parser
+	- version: 5.3.4
 	- license: MIT
 - floating-vue
 	- version: 1.0.0-beta.19
@@ -400,7 +402,7 @@ This file is generated from multiple sources. Included packages:
 	- version: 6.0.1
 	- license: MIT
 - unist-util-visit
-	- version: 5.0.0
+	- version: 5.1.0
 	- license: MIT
 - url-join
 	- version: 5.0.0
@@ -423,14 +425,8 @@ This file is generated from multiple sources. Included packages:
 - vue
 	- version: 2.7.16
 	- license: MIT
-- fast-xml-parser
-	- version: 4.5.3
-	- license: MIT
-- strnum
-	- version: 1.1.2
-	- license: MIT
 - webdav
-	- version: 5.8.0
+	- version: 5.9.0
 	- license: MIT
 - webpack
 	- version: 5.104.1
