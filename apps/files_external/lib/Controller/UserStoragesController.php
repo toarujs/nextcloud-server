@@ -98,7 +98,8 @@ class UserStoragesController extends StoragesController {
 		array $backendOptions,
 		?array $mountOptions,
 	): DataResponse {
-		if ($backend === 'local') {
+		$canCreateNewLocalStorage = $this->config->getSystemValue('files_external_allow_create_new_local', true);
+		if (!$canCreateNewLocalStorage && $backend === 'local') {
 			return new DataResponse(
 				[
 					'message' => $this->l10n->t('Forbidden to manage local mounts')
