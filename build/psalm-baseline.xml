@@ -3081,7 +3081,6 @@
     </DeprecatedClass>
     <DeprecatedInterface>
       <code><![CDATA[$object]]></code>
-      <code><![CDATA[Task]]></code>
       <code><![CDATA[private]]></code>
     </DeprecatedInterface>
   </file>
@@ -3534,7 +3533,6 @@
   </file>
   <file src="lib/private/Files/Cache/Wrapper/CacheWrapper.php">
     <LessSpecificImplementedReturnType>
-      <code><![CDATA[array]]></code>
       <code><![CDATA[array]]></code>
     </LessSpecificImplementedReturnType>
   </file>
