@@ -11,6 +11,7 @@ return (require __DIR__ . '/rector-shared.php')
 	->withPaths([
 		$nextcloudDir . '/build/rector-strict.php',
 		$nextcloudDir . '/core/BackgroundJobs/ExpirePreviewsJob.php',
+		$nextcloudDir . '/apps/dav/lib/Connector/Sabre/Node.php',
 	])
 	->withPreparedSets(
 		deadCode: true,
