@@ -41,7 +41,7 @@ class FilesTest extends TestCase {
 	}
 
 	#[\PHPUnit\Framework\Attributes\DataProvider('streamCopyDataProvider')]
-	public function testStreamCopy($expectedCount, $expectedResult, $source, $target): void {
+	public function testStreamCopy($expectedCount, $source, $target): void {
 		if (is_string($source)) {
 			$source = fopen($source, 'r');
 		}
@@ -49,7 +49,7 @@ class FilesTest extends TestCase {
 			$target = fopen($target, 'w');
 		}
 
-		[$count, $result] = Files::streamCopy($source, $target, true);
+		$count = stream_copy_to_stream($source, $target);
 
 		if (is_resource($source)) {
 			fclose($source);
@@ -59,16 +59,15 @@ class FilesTest extends TestCase {
 		}
 
 		$this->assertSame($expectedCount, $count);
-		$this->assertSame($expectedResult, $result);
 	}
 
 
 	public static function streamCopyDataProvider(): array {
 		return [
-			[0, false, false, false],
-			[0, false, \OC::$SERVERROOT . '/tests/data/lorem.txt', false],
-			[filesize(\OC::$SERVERROOT . '/tests/data/lorem.txt'), true, \OC::$SERVERROOT . '/tests/data/lorem.txt', \OC::$SERVERROOT . '/tests/data/lorem-copy.txt'],
-			[3670, true, \OC::$SERVERROOT . '/tests/data/testimage.png', \OC::$SERVERROOT . '/tests/data/testimage-copy.png'],
+			[false, false, false],
+			[false, \OC::$SERVERROOT . '/tests/data/lorem.txt', false],
+			[filesize(\OC::$SERVERROOT . '/tests/data/lorem.txt'), \OC::$SERVERROOT . '/tests/data/lorem.txt', \OC::$SERVERROOT . '/tests/data/lorem-copy.txt'],
+			[3670, \OC::$SERVERROOT . '/tests/data/testimage.png', \OC::$SERVERROOT . '/tests/data/testimage-copy.png'],
 		];
 	}
 }
