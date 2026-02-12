@@ -18,6 +18,7 @@
 	<projectFiles>
 		<file name="core/BackgroundJobs/ExpirePreviewsJob.php"/>
 		<file name="apps/dav/lib/Connector/Sabre/Node.php"/>
+		<file name="apps/files_versions/lib/Versions/IMetadataVersion.php"/>
 		<ignoreFiles>
 			<directory name="apps/**/composer"/>
 			<directory name="apps/**/tests"/>
