@@ -43,13 +43,14 @@ use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 
 /**
- * @psalm-type Check = array{id: int, class: class-string<ICheck>, operator: string, value: string, hash: string}
+ * @psalm-import-type WorkflowEngineCheck from ResponseDefinitions
+ * @psalm-import-type WorkflowEngineRule from ResponseDefinitions
  */
 class Manager implements IManager {
 	/** @var array[] */
 	protected array $operations = [];
 
-	/** @var array<int, Check> */
+	/** @var array<int, WorkflowEngineCheck> */
 	protected array $checks = [];
 
 	/** @var IEntity[] */
@@ -264,7 +265,7 @@ class Manager implements IManager {
 	/**
 	 * @param string $class
 	 * @param string $name
-	 * @param list<Check> $checks
+	 * @param list<WorkflowEngineCheck> $checks
 	 * @param string $operation
 	 * @return array The added operation
 	 * @throws \UnexpectedValueException
@@ -332,7 +333,7 @@ class Manager implements IManager {
 	/**
 	 * @param int $id
 	 * @param string $name
-	 * @param array[] $checks
+	 * @param list<WorkflowEngineCheck> $checks
 	 * @param string $operation
 	 * @return array The updated operation
 	 * @throws \UnexpectedValueException
@@ -455,7 +456,7 @@ class Manager implements IManager {
 
 	/**
 	 * @param class-string<IOperation> $class
-	 * @param list<Check> $checks
+	 * @param list<WorkflowEngineCheck> $checks
 	 * @param array $events
 	 * @throws \UnexpectedValueException
 	 */
@@ -522,7 +523,7 @@ class Manager implements IManager {
 
 	/**
 	 * @param int[] $checkIds
-	 * @return array<int, Check>
+	 * @return array<int, WorkflowEngineCheck>
 	 */
 	public function getChecks(array $checkIds): array {
 		$checkIds = array_map('intval', $checkIds);
@@ -546,7 +547,7 @@ class Manager implements IManager {
 		$result = $query->executeQuery();
 
 		while ($row = $result->fetchAssociative()) {
-			/** @var Check $row */
+			/** @var WorkflowEngineCheck $row */
 			$this->checks[(int)$row['id']] = $row;
 			$checks[(int)$row['id']] = $row;
 		}
