@@ -1199,7 +1199,7 @@ class ManagerTest extends \Test\TestCase {
 		}
 
 		$expected = new \DateTime('now', $this->timezone);
-		$expected->setTime(0, 0, 0);
+		$expected->setTime(23, 59, 59);
 		$expected->add(new \DateInterval('P3D'));
 
 		self::invokePrivate($this->manager, 'validateExpirationDateInternal', [$share]);
@@ -1232,7 +1232,7 @@ class ManagerTest extends \Test\TestCase {
 		}
 
 		$expected = new \DateTime('now', $this->timezone);
-		$expected->setTime(0, 0, 0);
+		$expected->setTime(23, 59, 59);
 		$expected->add(new \DateInterval('P1D'));
 
 		self::invokePrivate($this->manager, 'validateExpirationDateInternal', [$share]);
@@ -1279,7 +1279,7 @@ class ManagerTest extends \Test\TestCase {
 		$future->setTime(1, 2, 3);
 
 		$expected = clone $future;
-		$expected->setTime(0, 0, 0);
+		$expected->setTime(23, 59, 59);
 
 		$share = $this->manager->newShare();
 		$share->setShareType($shareType);
@@ -1319,7 +1319,7 @@ class ManagerTest extends \Test\TestCase {
 		$date->setTime(1, 2, 3);
 
 		$expected = clone $date;
-		$expected->setTime(0, 0, 0);
+		$expected->setTime(23, 59, 59);
 
 		$share = $this->manager->newShare();
 		$share->setShareType($shareType);
@@ -1562,7 +1562,7 @@ class ManagerTest extends \Test\TestCase {
 			]);
 
 		$expected = new \DateTime('now', $this->timezone);
-		$expected->setTime(0, 0, 0);
+		$expected->setTime(23, 59, 59);
 		$expected->add(new \DateInterval('P3D'));
 
 		self::invokePrivate($this->manager, 'validateExpirationDateLink', [$share]);
@@ -1587,7 +1587,7 @@ class ManagerTest extends \Test\TestCase {
 			]);
 
 		$expected = new \DateTime('now', $this->timezone);
-		$expected->setTime(0, 0, 0);
+		$expected->setTime(23, 59, 59);
 		$expected->add(new \DateInterval('P1D'));
 
 		self::invokePrivate($this->manager, 'validateExpirationDateLink', [$share]);
@@ -1626,7 +1626,7 @@ class ManagerTest extends \Test\TestCase {
 		$future->setTime(1, 2, 3);
 
 		$expected = clone $future;
-		$expected->setTime(0, 0, 0);
+		$expected->setTime(23, 59, 59);
 
 		$share = $this->manager->newShare();
 		$share->setExpirationDate($future);

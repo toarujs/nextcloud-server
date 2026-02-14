@@ -773,7 +773,7 @@ class ShareAPIControllerTest extends TestCase {
 		$data['Folder shared with group'] = [$share, $expected, true];
 
 		// File shared by link with Expire
-		$expire = \DateTime::createFromFormat('Y-m-d h:i:s', '2000-01-02 01:02:03');
+		$expire = \DateTime::createFromFormat('Y-m-d H:i:s', '2000-01-02 23:59:59');
 		$share = [
 			'101',
 			IShare::TYPE_LINK,
@@ -807,7 +807,7 @@ class ShareAPIControllerTest extends TestCase {
 			'file_target' => 'target',
 			'file_parent' => 3,
 			'token' => 'token',
-			'expiration' => '2000-01-02 00:00:00',
+			'expiration' => '2000-01-02 23:59:59',
 			'permissions' => 4,
 			'attributes' => null,
 			'stime' => 5,
