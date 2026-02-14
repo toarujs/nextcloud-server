@@ -47,6 +47,7 @@ use OCP\Share\IShareProviderWithNotification;
 use OCP\Util;
 use Psr\Log\LoggerInterface;
 use function str_starts_with;
+use function strlen;
 
 /**
  * Class DefaultShareProvider
@@ -869,7 +870,9 @@ class DefaultShareProvider implements
 
 		$nonChildPath = '/';
 		if ($path !== null) {
-			$path = str_replace('/' . $userId . '/files', '', $path);
+			if (str_starts_with($path, '/' . $userId . '/files')) {
+				$path = substr($path, strlen('/' . $userId . '/files'));
+			}
 			$path = rtrim($path, '/');
 
 			if ($path !== '') {
