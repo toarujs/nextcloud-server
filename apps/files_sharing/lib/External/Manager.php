@@ -755,7 +755,10 @@ class Manager {
 			$shares = $result->fetchAll();
 			$result->closeCursor();
 
-			$deletedGroupShares = [];
+			foreach ($shares as $share) {
+				$this->sendFeedbackToRemote($share['remote'], $share['share_token'], $share['remote_id'], 'decline');
+			}
+
 			$qb = $this->connection->getQueryBuilder();
 			// delete group share entry and matching sub-entries
 			$qb->delete('share_external')

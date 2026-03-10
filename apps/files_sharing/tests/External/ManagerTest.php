@@ -412,7 +412,9 @@ class ManagerTest extends TestCase {
 		$this->assertNotMount('{{TemporaryMountPointName#' . $shareData1['name'] . '}}-1');
 
 		if ($isGroup) {
-			// no http requests here
+			$this->manager->expects($this->once())->method('tryOCMEndPoint')
+				->with('http://localhost', 'token1', '2342', 'decline')
+				->willReturn([]);
 			$this->manager->removeGroupShares('group1');
 		} else {
 			$client1 = $this->getMockBuilder('OCP\Http\Client\IClient')
@@ -954,7 +956,9 @@ class ManagerTest extends TestCase {
 		$user2Shares = $manager2->getOpenShares();
 		$this->assertCount(2, $user2Shares);
 
-		$this->manager->expects($this->never())->method('tryOCMEndPoint');
+		$this->manager->expects($this->once())->method('tryOCMEndPoint')
+			->with('http://localhost', 'token1', '2342', 'decline')
+			->willReturn([]);
 		$this->manager->removeGroupShares('group1');
 
 		$user1Shares = $this->manager->getOpenShares();
