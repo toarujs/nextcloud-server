@@ -650,6 +650,11 @@ class Manager {
 				$deleteResult->closeCursor();
 			} elseif ($share !== false && (int)$share['share_type'] === IShare::TYPE_GROUP) {
 				if ($force) {
+					try {
+						$this->sendFeedbackToRemote($share['remote'], $share['share_token'], $share['remote_id'], 'decline');
+					} catch (\Throwable $e) {
+					}
+
 					$qb = $this->connection->getQueryBuilder();
 					// delete group share entry and matching sub-entries
 					$qb->delete('share_external')
